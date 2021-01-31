@@ -30,20 +30,16 @@ books = new Collection<Book>(this);
 @OneToMany({ entity: () => Book, mappedBy: 'author', cascade: [Cascade.REMOVE] })
 books = new Collection<Book>(this);
 
-// cascade persist and remove (same as `Cascade.ALL`)
-@OneToMany({ entity: () => Book, mappedBy: 'author', cascade: [Cascade.PERSIST, Cascade.REMOVE] })
-books = new Collection<Book>(this);
-
-// no cascade
-@OneToMany({ entity: () => Book, mappedBy: 'author', cascade: [] })
-books = new Collection<Book>(this);
-
 // cascade all (persist and remove)
 @OneToMany({ entity: () => Book, mappedBy: 'author', cascade: [Cascade.ALL] })
 books = new Collection<Book>(this);
 
 // same as previous definition
 @OneToMany({ entity: () => Book, mappedBy: 'author', cascade: [Cascade.PERSIST, Cascade.REMOVE] })
+books = new Collection<Book>(this);
+
+// no cascade
+@OneToMany({ entity: () => Book, mappedBy: 'author', cascade: [] })
 books = new Collection<Book>(this);
 ```
 
